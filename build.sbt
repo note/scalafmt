@@ -184,6 +184,7 @@ lazy val cli = project
     },
     scalacOptions ++= scalacJvmOptions.value,
     mainClass in GraalVMNativeImage := Some("org.scalafmt.cli.Cli"),
+    graalVMNativeImageCommand := "native-image.cmd",
     graalVMNativeImageOptions ++= {
       val reflectionFile =
         Keys.sourceDirectory.in(Compile).value./("graal")./("reflection.json")
